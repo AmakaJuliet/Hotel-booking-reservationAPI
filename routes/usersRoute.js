@@ -7,7 +7,7 @@ import {
   deleteUser,
   getUser,
   getAllUsers,
-} from "../controllers/user.js";
+} from "../controllers/userController.js";
 import { verifyUser, verifyAdmin } from "../middlewars/verifyToken.js";
 
 //update
