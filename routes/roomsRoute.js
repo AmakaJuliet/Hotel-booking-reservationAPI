@@ -6,6 +6,8 @@ import {
   updateRoomAvailability,
 } from "../controllers/roomController.js";
 
+import { verifyUser, verifyAdmin } from "../middlewars/verifyToken.js";
+
 router.post("/", createRoom);
 router.put("/", updateRoomAvailability);
 

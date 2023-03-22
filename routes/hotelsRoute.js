@@ -8,6 +8,7 @@ import {
   countHotelByType,
   getHotelRooms,
 } from "../controllers/hotelController.js";
+import { verifyUser, verifyAdmin } from "../middlewars/verifyToken.js";
 
 router.post("/", createHotel);
 router.get("/", getHotels);
