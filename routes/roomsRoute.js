@@ -1,9 +1,12 @@
 import express from "express";
 const router = express.Router();
 
-import { createHotel, updateRoomAvailability } from "../controllers/room.js";
+import {
+  createRoom,
+  updateRoomAvailability,
+} from "../controllers/roomController.js";
 
-router.post("/", createHotel);
+router.post("/", createRoom);
 router.put("/", updateRoomAvailability);
 
 export default router;

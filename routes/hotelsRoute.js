@@ -7,7 +7,7 @@ import {
   countByCity,
   countHotelByType,
   getHotelRooms,
-} from "../controllers/hotel.js";
+} from "../controllers/hotelController.js";
 
 router.post("/", createHotel);
 router.get("/", getHotels);

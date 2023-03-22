@@ -3,7 +3,7 @@ import Room from "../models/Room.js";
 
 import { createError } from "../utils/error.js";
 
-export const createHotel = async (req, res, next) => {
+export const createRoom = async (req, res, next) => {
   const hotelId = req.params.hotelid;
   const newRoom = new Room(req.body);
 
