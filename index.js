@@ -4,10 +4,10 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser"
 import cors from "cors";
-import authRoutes from "./routes/authRoute.js"
-import userRoutes from "./routes/usersRoute.js"
-import hotelRoutes from "./routes/hotelsRoute.js"
-import roomRoutes from "./routes/roomsRoute.js"
+import authRoutes from "./routes/auth.js"
+import userRoutes from "./routes/users.js"
+import hotelRoutes from "./routes/hotels.js"
+import roomRoutes from "./routes/rooms.js"
 
 const app = express(); 
 dotenv.config();
