@@ -1,11 +1,16 @@
 // const router = router("express").Router();
 import express from "express";
-const router = express.Router() 
+const router = express.Router();
 
-import { updateUser, deleteUser, getUser, getAllUsers} from "../controllers/user.js";
+import {
+  updateUser,
+  deleteUser,
+  getUser,
+  getAllUsers,
+} from "../controllers/user.js";
 import { verifyUser, verifyAdmin } from "../middlewars/verifyToken.js";
 
-//update 
+//update
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 router.get("/:id", getUser);
