@@ -7,7 +7,7 @@ import {
   getAvailableRooms,
 } from "../controllers/roomController.js";
 
-router.post("/:hotelId", createRoom);
-router.get("/all", getAvailableRooms);
+router.post("/", createRoom);
+router.put("/", updateRoomAvailability);
 
 export default router;
