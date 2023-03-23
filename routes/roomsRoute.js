@@ -10,5 +10,4 @@ router.post("/:hotelId", createRoom);
 router.get("/all", getAvailableRooms);
 
 
-
 export default router;
