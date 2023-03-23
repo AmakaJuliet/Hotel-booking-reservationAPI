@@ -1,6 +1,7 @@
 //const express = require("express");
 import express from "express";
 import dotenv from "dotenv";
+import morgan from "morgan";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -26,17 +27,21 @@ const db_connect = async () => {
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
+app.use(morgan("tiny"));
 
+//routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/hotel", hotelRoutes);
 app.use("/api/room", roomRoutes);
+
 app.use("/api", (req, res) => {
   res.status(200).json({
     message: "Welcome to Hotel Booking API 🎯🎯🎯",
   });
 });
 
+//error checker
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
