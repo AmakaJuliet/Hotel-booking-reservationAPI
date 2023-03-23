@@ -62,19 +62,24 @@ export const getUserBooking = async (req, res, next) => {
 export const extendUserBooking = async (req, res, next) => {
   try {
     const booking = await Booking.findById(req.params.id);
-    const date = new Date(booking.dates[0]);
-    booking.dates.push(date.setDate(date.getDate()) + 1);
-    //   {
-    //     $push: {
-    //       dates: date.setDate(date.getDate() + 1),
-    //     },
-    //   }
-    // );
+    const date = new Date(booking.dates[booking.dates.length - 1]);
+    const newDate = date.setDate(date.getDate() + 1);
+    const updateBooking = await Booking.findByIdAndUpdate(
+      req.params.id,
+      {
+        $push: {
+          dates: newDate,
+        },
+      },
+      {
+        new: true,
+      }
+    );
 
     return res.status(200).json({
       success: true,
-      message: `${booking.length} booking(s) found`,
-      booking,
+      message: `Booking date extended successfully`,
+      booking: updateBooking,
     });
   } catch (error) {
     next(error);
