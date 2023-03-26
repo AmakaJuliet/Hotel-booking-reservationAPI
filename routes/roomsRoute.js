@@ -4,7 +4,6 @@ const router = express.Router();
 import {
   createRoom,
   updateRoomAvailability,
-  getAvailableRooms,
 } from "../controllers/roomController.js";
 
 router.post("/", createRoom);

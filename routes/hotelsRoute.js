@@ -10,7 +10,6 @@ import {
   getHotelRooms,
   bookHotelRoom,
 } from "../controllers/hotelController.js";
-import { verifyUser, verifyAdmin } from "../middlewars/verifyToken.js";
 
 router.post("/create", verifyAdmin, createHotel);
 router.get("/all", getAllHotels);
