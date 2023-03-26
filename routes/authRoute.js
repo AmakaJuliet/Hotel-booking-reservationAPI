@@ -3,7 +3,7 @@ import express from "express";
 const router = express.Router();
 
 import { register, login } from "../controllers/authController.js";
-import { verifyUser, verifyAdmin } from "../middlewars/verifyToken.js";
+
 
 router.post("/register", register);
 router.post("/login", login);
